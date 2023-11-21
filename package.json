@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "subtree:add": "git subtree add -P deps git@github.com:joeljiezhu/subtree-source.git main --squash --message 'feat: add subtree-source main'"
+    "subtree:add": "git subtree add -P deps git@github.com:joeljiezhu/subtree-source.git main --squash --message 'feat: add subtree-source main'",
+    "subtree:update:msg": "git filter-repo --message-callback 'return re.sub(b\"Squashed\", b\"feat: Squashed\", message, count=1)' --refs HEAD...HEAD~1 --force"
   },
   "keywords": [],
   "author": "",
